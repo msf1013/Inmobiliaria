@@ -5,7 +5,7 @@
  * Date: 4/13/2016
  * Time: 2:09 PM
  */
-//include ("../view/header.php");
+include ("../view/header.php");
 ?>
 
 <html>
@@ -35,6 +35,7 @@
         }
         ?>
     </table>
+    <br>
     [ <a href="../controller/menuPrincipal.php">Menu Principal</a> ]
 </body>
 </html>
