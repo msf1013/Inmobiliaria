@@ -8,6 +8,6 @@
 // Start the session
 if (! isset($_SESSION["user"]) ){
     header("Location: ../controller/login.php");
-    include("../view/desplegar.php");
+    include("../view/login.php");
     exit();
 }
