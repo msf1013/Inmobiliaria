@@ -1,3 +1,12 @@
+<?php
+    session_start();
+
+    if (isset($_SESSION["usuario"]) ){
+        //header("Location: ../controller/login.php");
+        header("Location: ../view/menu.php");
+        exit();
+    }
+?>
 <html>
     <head>
     </head>

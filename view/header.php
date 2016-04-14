@@ -6,8 +6,11 @@
  * Time: 11:12 AM
  */
 // Start the session
-if (! isset($_SESSION["user"]) ){
-    header("Location: ../controller/login.php");
-    include("../view/login.php");
+
+session_start();
+
+if (! isset($_SESSION["usuario"]) ){
+    //header("Location: ../controller/login.php");
+    header("Location: ../view/login.php");
     exit();
 }

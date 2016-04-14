@@ -5,7 +5,8 @@
  * Date: 4/13/2016
  * Time: 2:09 PM
  */
-//include ("../view/header.php");
+ include ("header.php");
+ include("../controller/cargarAnuncios.php");
 ?>
 
 <html>
@@ -28,11 +29,11 @@
             foreach ($anuncios as $anuncio){
                 ?>
                 <tr>
-                    <td><?= $anuncio->titulo ?></td>
-                    <td><?= $anuncio->observaciones ?></td>
-                    <td><?= $anuncio->fecha ?></td>
-                    <td><?= $anuncio->imagen ?></td>
-                    <td><input type="checkbox" name="borrar" value="<?= $anuncio->id ?>"></td>
+                    <td><?= $anuncio["titulo"] ?></td>
+                    <td><?= $anuncio["observaciones"] ?></td>
+                    <td><?= $anuncio["fecha"] ?></td>
+                    <td><?= $anuncio["imagen"] ?></td>
+                    <td><input type="checkbox" name="borrar" value="<?= $anuncio["id"] ?>"></td>
                 </tr>
                 <?php
             }
@@ -41,6 +42,6 @@
         <br>
         <input type="submit" value="Eliminar anuncios marcados">
     </form>
-    [ <a href="../controller/menuPrincipal.php">Menu Principal</a> ]
+    [ <a href="../view/menu.php">Menu Principal</a> ]
 </body>
 </html>
