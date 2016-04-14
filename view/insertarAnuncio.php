@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -7,8 +6,12 @@
 <body>
 <?php
 // Obtener valores introducidos
-$titulo = $_REQUEST['titulo'];
-$obs = $_REQUEST['obs'];
+$titulo = $_POST['titulo'];
+$obs = $_POST['obs'];
+
+echo $titulo;
+echo $obs;
+
 $error = false;
 // Comprobar que se han introducido todos los datos obligatorios
 // Título
@@ -37,7 +40,7 @@ if (is_file($nombreCompleto)){
 }
 // El archivo introducido supera el límite de tamaño permitido
 else if ($_FILES['imagen']['error'] == UPLOAD_ERR_FORM_SIZE){
-    $maxsize = $_REQUEST['MAX_FILE_SIZE'];
+    $maxsize = $_POST['MAX_FILE_SIZE'];
     $errores["imagen"] =
         "¡El tamaño del archivo supera el límite permitido ($maxsize bytes)!";
     $error = true;
@@ -83,7 +86,7 @@ if ($error==false){
     print ("</ul>\n");
 
     print ("<p>[ <a href='insertar.php'>Insertar otro anuncio</a> | ");
-    print ("<a href='login.php'>Menú principal</a> ]</p>\n");
+    print ("<a href='menu.php'>Menú principal</a> ]</p>\n");
 }
 else {
     foreach ($errores as $key => $value){
@@ -92,7 +95,7 @@ else {
     }
     ?>
     </p>
-    <p>[ <a href='login.php'>Menú principal</a> ]</p>
+    <p>[ <a href='menu.php'>Menú principal</a> ]</p>
     <?php
 }
 ?>
