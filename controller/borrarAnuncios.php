@@ -14,7 +14,7 @@
     }
     else{
         $_POST["letrero"] = "Error con la base de datos al tratar de borrar anuncios";
-        header("Location: ../view/borrar.php");
+        header("Location: ../view/borrarAnuncios.php");
     }
 
     

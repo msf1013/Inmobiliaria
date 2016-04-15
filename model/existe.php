@@ -9,7 +9,7 @@ function existe($usuario, $password){
 
 
     try{
-        $dbh=new PDO("mysql:host=localhost;port=3306;dbname=babel","root","");
+        $dbh=new PDO("mysql:host=localhost;port=3306;dbname=babel","root","root");
         $query="select * from usuarios where usuario='$usuario' and password='$password'";
         $resultado=$dbh->query($query);
 

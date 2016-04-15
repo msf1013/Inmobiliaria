@@ -30,7 +30,7 @@ include("../controller/cargarAnuncios.php");
             <td><?= $anuncio["titulo"] ?></td>
             <td><?= $anuncio["observaciones"] ?></td>
             <td><?= $anuncio["fecha"] ?></td>
-            <td><?= $anuncio["imagen"] ?></td>
+            <td><a href="<?= "img/".$anuncio["imagen"]?>"><?= $anuncio["imagen"] ?></td>
         </tr>
         <?php
         }

@@ -32,7 +32,7 @@
                     <td><?= $anuncio["titulo"] ?></td>
                     <td><?= $anuncio["observaciones"] ?></td>
                     <td><?= $anuncio["fecha"] ?></td>
-                    <td><?= $anuncio["imagen"] ?></td>
+                    <td><a href="<?= "img/".$anuncio["imagen"]?>"><?= $anuncio["imagen"] ?></td>
                     <td><input type="checkbox" name="borrar[]" value="<?= $anuncio["id"] ?>"></td>
                 </tr>
                 <?php

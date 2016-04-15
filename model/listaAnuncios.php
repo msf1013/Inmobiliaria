@@ -9,7 +9,7 @@
 function listaAnuncios(){
     $resultado = [];
     try{
-        $dbh=new PDO("mysql:host=localhost;port=3306;dbname=babel","root","");
+        $dbh=new PDO("mysql:host=localhost;port=3306;dbname=babel","root","root");
         $query="select * from anuncios";
         $resultado=$dbh->query($query);
 
@@ -24,9 +24,19 @@ function listaAnuncios(){
 
 function borraAnuncios($ids){
     try {
-        $dbh=new PDO("mysql:host=localhost;port=3306;dbname=babel","root","");
+        $dbh=new PDO("mysql:host=localhost;port=3306;dbname=babel","root","root");
         foreach ($ids as $id) {
+            // Obtener nombre de archivo
+            $query="select imagen from anuncios where id='$id'";
+            $resultado = $dbh->query($query);
+            foreach ($resultado as $anuncio) {
+                // Borrar archivo si es que existe
+                if ($anuncio["imagen"] != "") {
+                    unlink( $_SERVER['DOCUMENT_ROOT'] . "/Inmobiliaria/view/img/" . $anuncio["imagen"]);
+                }
+            }
 
+            // Eliminar anuncio
             $query="delete from anuncios where id='$id'";
             $dbh->query($query);
         }

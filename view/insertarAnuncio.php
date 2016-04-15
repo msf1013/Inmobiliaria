@@ -52,7 +52,7 @@ else if ($_FILES['imagen']['name'] == "")
 // Si los datos son correctos, procesar formulario
 if ($error==false){
     // Insertar el anuncio en la Base de Datos
-    $mysqli = new mysqli("localhost", "root", "", "babel");
+    $mysqli = new mysqli("localhost", "root", "root", "babel");
     if ($mysqli->connect_errno) {
         echo "Failed to connect to MySQL: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
     }
